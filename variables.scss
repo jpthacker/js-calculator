@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+@font-face {
+  font-family: "digital-7";
+  src: url("~/library/fonts/Digital7Italic-RBM3.ttf");
+}
+
+$font-primary: "Shippori Antique B1", helvetica, sans-serif;
+$font-digital: "digital-7", "Orbitron", monospace;
+
+$color-white: #fafafa;
+$color-gray-light: #9a9a9a;
+$color-gray-dark: #575757;
+
+$color-brown-light: #fff3d2;
+$color-brown-dark: #fcddc0;
+
+$color-blue: #9eb0df;
+$color-orange: #ff8541;
