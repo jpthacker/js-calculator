@@ -1,0 +1,23 @@
+{
+  "name": "js-calculator",
+  "version": "1.0.0",
+  "description": "Nology coursework: make a calculator challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpthacker/js-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpthacker/js-calculator/issues"
+  },
+  "homepage": "https://github.com/jpthacker/js-calculator#readme",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}
