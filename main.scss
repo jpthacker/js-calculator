@@ -1,13 +1,2 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-@import "abstracts/variables";
-@import "base/typography";
-@import "layout/layout";
-
-body {
-  background: red;
-}
+@use "base/typography";
+@use "layout/layout";
