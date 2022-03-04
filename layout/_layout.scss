@@ -22,4 +22,17 @@ body {
   background-color: $color-blue;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 15px 15px 25px rgba(0, 0, 0, 0.2);
   border-radius: 45px;
+
+  &__grid {
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+  }
+
+  &__screen {
+    width: 100%;
+    height: 88px;
+    background: #cbc4a7;
+    border-radius: 25px;
+  }
 }

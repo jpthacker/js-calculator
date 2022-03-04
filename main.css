@@ -36,5 +36,97 @@ body {
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 15px 15px 25px rgba(0, 0, 0, 0.2);
   border-radius: 45px;
 }
+.calc__grid {
+  height: 100%;
+  width: 100%;
+  padding: 30px;
+}
+.calc__screen {
+  width: 100%;
+  height: 88px;
+  background: #cbc4a7;
+  border-radius: 25px;
+}
+
+.calc__grid {
+  display: grid;
+  gap: 10px;
+  grid-template: "screen screen screen screen" "AC solar solar divide" "seven eight nine multiply" "four five six minus" "one two three plus" "zero zero decimal equals";
+}
+
+.calc__screen {
+  grid-area: screen;
+}
+.calc__screen__solar-panel {
+  grid-area: solar;
+}
+
+#cancel {
+  grid-area: AC;
+}
+
+#divide {
+  grid-area: divide;
+}
+
+#seven {
+  grid-area: seven;
+}
+
+#eight {
+  grid-area: eight;
+}
+
+#nine {
+  grid-area: nine;
+}
+
+#multiply {
+  grid-area: multiply;
+}
+
+#four {
+  grid-area: four;
+}
+
+#five {
+  grid-area: five;
+}
+
+#six {
+  grid-area: six;
+}
+
+#minus {
+  grid-area: minus;
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three {
+  grid-area: three;
+}
+
+#plus {
+  grid-area: plus;
+}
+
+#zero {
+  grid-area: zero;
+}
+
+#decimal {
+  grid-area: decimal;
+}
+
+#equals {
+  grid-area: equals;
+}
 
 /*# sourceMappingURL=main.css.map */
