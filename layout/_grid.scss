@@ -12,14 +12,14 @@
 
 .calc__screen {
   grid-area: screen;
-
-  &__solar-panel {
-    grid-area: solar;
-  }
 }
 
 #cancel {
   grid-area: AC;
+}
+
+.calc__solar-panel {
+  grid-area: solar;
 }
 
 #divide {

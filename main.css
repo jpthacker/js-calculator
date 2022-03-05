@@ -47,6 +47,12 @@ body {
   background: #cbc4a7;
   border-radius: 25px;
 }
+.calc__solar-panel {
+  background: #443232;
+  border-radius: 5px;
+  width: 100%;
+  height: 60%;
+}
 
 .calc__grid {
   display: grid;
@@ -57,12 +63,13 @@ body {
 .calc__screen {
   grid-area: screen;
 }
-.calc__screen__solar-panel {
-  grid-area: solar;
-}
 
 #cancel {
   grid-area: AC;
+}
+
+.calc__solar-panel {
+  grid-area: solar;
 }
 
 #divide {
