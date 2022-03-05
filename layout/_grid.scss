@@ -1,6 +1,7 @@
 .calc__grid {
   display: grid;
-  gap: 10px;
+  gap: 15px;
+  grid-auto-columns: 1fr;
   grid-template:
     "screen screen screen screen"
     "AC solar solar divide"
