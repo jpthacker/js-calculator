@@ -52,6 +52,7 @@ body {
   border-radius: 5px;
   width: 100%;
   height: 60%;
+  margin-top: 10%;
 }
 
 .calc__grid {
@@ -154,7 +155,7 @@ body {
   background: #fafafa;
 }
 .calc__btn--symbol {
-  background: #ff8541;
+  background: #ffab7b;
 }
 .calc__btn--cancel {
   background: #575757;
