@@ -1,16 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Shippori+Antique+B1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 @font-face {
   font-family: "digital-7";
   src: url("~/library/fonts/Digital7Italic-RBM3.ttf");
 }
 * {
-  font-family: "Shippori Antique B1", helvetica, sans-serif;
-  color: #575757;
+  font-family: "DM Sans", helvetica, sans-serif;
+  color: #8b8b8b;
 }
 
 .calc__screen {
   font-family: "digital-7", "Orbitron", monospace;
+}
+
+[class*=btn] {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.calc__btn--cancel {
+  font-size: 22px;
 }
 
 * {
@@ -33,7 +42,7 @@ body {
   width: 358px;
   height: 576px;
   background-color: #9eb0df;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 15px 15px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 12px 10px 50px rgba(0, 0, 0, 0.5);
   border-radius: 45px;
 }
 .calc__grid {
@@ -66,7 +75,7 @@ body {
   grid-area: screen;
 }
 
-#cancel {
+.cal__btn--cancel {
   grid-area: AC;
 }
 
@@ -139,13 +148,15 @@ body {
 }
 
 [class*=btn] {
+  max-height: 62px;
+  max-width: 62px;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), 8px 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), 8px 6px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .calc__btn {
@@ -153,13 +164,19 @@ body {
 }
 .calc__btn--wide {
   background: #fafafa;
+  max-width: 140px;
 }
 .calc__btn--symbol {
   background: #ffab7b;
+  color: #fafafa;
 }
 .calc__btn--cancel {
   background: #575757;
   color: #fafafa;
+}
+
+.calc__btn--hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 /*# sourceMappingURL=main.css.map */

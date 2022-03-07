@@ -2,9 +2,18 @@
 
 * {
   font-family: $font-primary;
-  color: $color-gray-dark;
+  color: $color-gray-light;
 }
 
 .calc__screen {
   font-family: $font-digital;
+}
+
+[class*="btn"] {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.calc__btn--cancel {
+  font-size: 22px;
 }

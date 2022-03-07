@@ -1,13 +1,15 @@
 @use "../abstracts" as *;
 
 [class*="btn"] {
+  max-height: 62px;
+  max-width: 62px;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), 8px 4px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3), 8px 6px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .calc__btn {
@@ -15,14 +17,20 @@
 
   &--wide {
     background: $color-white;
+    max-width: 140px;
   }
 
   &--symbol {
     background: $color-orange;
+    color: $color-white;
   }
 
   &--cancel {
     background: $color-gray-dark;
     color: $color-white;
   }
+}
+
+.calc__btn--hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
