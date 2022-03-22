@@ -49,11 +49,11 @@ body {
   &__screen-display {
     min-width: 92%;
     min-height: 82%;
-    background: #cbc4a7;
+    background: $color-screen;
     border-radius: 20px;
   }
 
-  &__solar-panel-border {
+  &__solar-border {
     width: 100%;
     height: 60%;
     margin-top: 10%;
@@ -70,10 +70,17 @@ body {
     justify-content: center;
   }
 
-  &__solar-panel {
+  &__solar-grid {
     min-width: 95%;
     min-height: 85%;
-    background: #443232;
+    background: $color-solar-light;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__solar-panel {
+    min-width: 24%;
+    background-color: $color-solar-dark;
   }
 }

@@ -65,7 +65,7 @@ body {
   background: #cbc4a7;
   border-radius: 20px;
 }
-.calc__solar-panel-border {
+.calc__solar-border {
   width: 100%;
   height: 60%;
   margin-top: 10%;
@@ -75,11 +75,17 @@ body {
   align-items: center;
   justify-content: center;
 }
-.calc__solar-panel {
+.calc__solar-grid {
   min-width: 95%;
   min-height: 85%;
-  background: #443232;
+  background: #635454;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.calc__solar-panel {
+  min-width: 24%;
+  background-color: #503e3e;
 }
 
 .calc__grid {
@@ -97,7 +103,7 @@ body {
   grid-area: AC;
 }
 
-.calc__solar-panel-border {
+.calc__solar-border {
   grid-area: solar;
 }
 
