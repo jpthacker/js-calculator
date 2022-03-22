@@ -86,3 +86,9 @@
 #equals {
   grid-area: equals;
 }
+
+@media screen and (min-width: 350px) {
+  .calc__grid {
+    gap: 12px;
+  }
+}

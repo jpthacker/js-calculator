@@ -39,7 +39,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  width: 320px;
+  width: 300px;
   height: 556px;
   background-color: #9eb0df;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25), 12px 10px 30px rgba(0, 0, 0, 0.4);
@@ -88,6 +88,15 @@ body {
   background-color: #503e3e;
 }
 
+@media screen and (min-width: 350px) {
+  .calc {
+    width: 340px;
+    height: 556px;
+  }
+  .calc__grid {
+    padding: 40px 30px;
+  }
+}
 .calc__grid {
   display: grid;
   gap: 5px;
@@ -171,6 +180,11 @@ body {
   grid-area: equals;
 }
 
+@media screen and (min-width: 350px) {
+  .calc__grid {
+    gap: 12px;
+  }
+}
 [class*=btn] {
   max-height: 60px;
   max-width: 60px;
