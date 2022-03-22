@@ -53,15 +53,33 @@ body {
 .calc__screen {
   width: 100%;
   height: 88px;
-  background: #cbc4a7;
+  background-image: linear-gradient(to bottom right, #8991a5, #969baa, #aab2c5, #a1add6, #a6afc9);
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.calc__solar-panel {
-  background: #443232;
-  border-radius: 5px;
+.calc__screen-display {
+  min-width: 92%;
+  min-height: 82%;
+  background: #cbc4a7;
+  border-radius: 20px;
+}
+.calc__solar-panel-border {
   width: 100%;
   height: 60%;
   margin-top: 10%;
+  background-image: linear-gradient(to bottom right, #81899e, #9ea5bb, #a0abce, #a6afc9);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calc__solar-panel {
+  min-width: 95%;
+  min-height: 85%;
+  background: #443232;
+  border-radius: 5px;
 }
 
 .calc__grid {
@@ -79,7 +97,7 @@ body {
   grid-area: AC;
 }
 
-.calc__solar-panel {
+.calc__solar-panel-border {
   grid-area: solar;
 }
 
@@ -175,7 +193,7 @@ body {
   color: #fafafa;
 }
 
-.calc__btn--hover {
+.clicked {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
