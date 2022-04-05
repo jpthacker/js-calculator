@@ -5,8 +5,12 @@
   color: $color-gray-light;
 }
 
-.calc__screen {
+.calc__screen-display {
   font-family: $font-digital;
+  font-size: large;
+  text-align: right;
+  font-size: 60px;
+  line-height: 80px;
 }
 
 [class*="btn"] {

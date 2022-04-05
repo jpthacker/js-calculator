@@ -49,8 +49,10 @@ body {
   &__screen-display {
     min-width: 92%;
     min-height: 82%;
+    max-height: 82%;
     background: $color-screen;
     border-radius: 20px;
+    padding: 0 15px;
   }
 
   &__solar-border {

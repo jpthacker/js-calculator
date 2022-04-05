@@ -9,8 +9,12 @@
   color: #8b8b8b;
 }
 
-.calc__screen {
+.calc__screen-display {
   font-family: "digital-7", "Orbitron", monospace;
+  font-size: large;
+  text-align: right;
+  font-size: 60px;
+  line-height: 80px;
 }
 
 [class*=btn] {
@@ -62,8 +66,10 @@ body {
 .calc__screen-display {
   min-width: 92%;
   min-height: 82%;
+  max-height: 82%;
   background: #cbc4a7;
   border-radius: 20px;
+  padding: 0 15px;
 }
 .calc__solar-border {
   width: 100%;
