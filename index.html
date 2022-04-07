@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="main.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Retro JS Calculator</title>
   </head>
   <body>
     <div class="calc">
       <div class="calc__grid">
         <div class="calc__screen">
-          <div class="calc__screen-display">01134</div>
+          <div class="calc__screen-display" id="display">01134</div>
         </div>
-        <div class="calc__btn--cancel">AC</div>
+        <div class="calc__btn--cancel" onclick="handleCancel()">AC</div>
         <div class="calc__solar-border">
           <div class="calc__solar-grid">
             <div class="calc__solar-panel"></div>
