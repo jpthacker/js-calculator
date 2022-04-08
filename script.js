@@ -8,6 +8,8 @@ let symbolPlus = "p";
 let symbolMinus = "mi";
 let symbolMultiply = "mu";
 let symbolDivide = "d";
+let lastSymbol = "e";
+let result = "r";
 
 // Cancels the calculation and resets the display to zero
 const handleCancel = () => {
@@ -39,38 +41,56 @@ btnSymbols.forEach((symbol) => {
         currentSymbol = symbolDivide;
         break;
     }
+    lastSymbol = currentSymbol;
   });
 });
+
+// Runs the calculation depending on the symbol pressed
+const handleCalculation = (symbol) => {
+  switch (symbol) {
+    case symbolPlus:
+      totalValue = totalValue += displayValue;
+      break;
+    case symbolMinus:
+      totalValue = totalValue -= displayValue;
+      break;
+    case symbolMultiply:
+      totalValue = totalValue * displayValue;
+      break;
+    case symbolDivide:
+      totalValue = totalValue / displayValue;
+      break;
+  }
+};
 
 // Handles the entry of numerical buttons and ensures continued calculations
 const btnNumbers = document.querySelectorAll(".calc__btn--num");
 btnNumbers.forEach((number) => {
   number.addEventListener("click", (event) => {
-    if (currentSymbol === symbolNeutral && displayValue != 0) {
+    if (
+      currentSymbol === symbolNeutral &&
+      displayValue != 0 &&
+      calcDisplay.innerText != totalValue
+    ) {
       calcDisplay.innerText = calcDisplay.innerText + event.target.innerText;
     } else {
       calcDisplay.innerText = event.target.innerText;
       displayValue = parseFloat(calcDisplay.innerText);
-      switch (currentSymbol) {
-        case symbolPlus:
-          totalValue = totalValue += displayValue;
-          break;
-        case symbolMinus:
-          totalValue = totalValue -= displayValue;
-          break;
-        case symbolMultiply:
-          totalValue = totalValue * displayValue;
-          break;
-        case symbolDivide:
-          totalValue = totalValue / displayValue;
-          break;
-      }
+      handleCalculation(currentSymbol);
     }
+    currentSymbol = symbolNeutral;
     console.log(totalValue);
   });
 });
 
-// Handles the equals symbol
+// Handles the equals symbol and provides updated results
+const handleResult = () => {
+  calcDisplay.innerText = totalValue;
+  handleCalculation(lastSymbol);
+  console.log(lastSymbol);
+  console.log(displayValue);
+  console.log(currentSymbol);
+};
 
 // Sources the numarical value of number buttons
 // let currentInteger;

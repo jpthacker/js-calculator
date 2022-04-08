@@ -217,6 +217,10 @@ body {
   background: #ffab7b;
   color: #fafafa;
 }
+.calc__btn--equals {
+  background: #ffab7b;
+  color: #fafafa;
+}
 .calc__btn--cancel {
   background: #575757;
   color: #fafafa;
