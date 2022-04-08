@@ -15,6 +15,10 @@
 .calc__btn {
   background-color: $color-white;
 
+  &--num {
+    background-color: $color-white;
+  }
+
   &--wide {
     background: $color-white;
     max-width: 140px;

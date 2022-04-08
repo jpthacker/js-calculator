@@ -206,6 +206,9 @@ body {
 .calc__btn {
   background-color: #fafafa;
 }
+.calc__btn--num {
+  background-color: #fafafa;
+}
 .calc__btn--wide {
   background: #fafafa;
   max-width: 140px;
