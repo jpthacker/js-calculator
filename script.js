@@ -1,21 +1,22 @@
 // Variables which determine the properties of the display and the current calculation
 let displayValue;
-let totalValue;
+let totalValue = 0;
 const calcDisplay = document.querySelector("#display");
 let symbolNeutral = "n";
 let currentSymbol;
 let symbolPlus = "p";
-let symbolMinus = "mi";
-let symbolMultiply = "mu";
+let symbolMinus = "m";
+let symbolMultiply = "x";
 let symbolDivide = "d";
-let lastSymbol = "e";
-let result = "r";
+let lastSymbol;
+let result;
 
 // Cancels the calculation and resets the display to zero
 const handleCancel = () => {
   calcDisplay.innerText = "0";
   displayValue = 0;
   totalValue = 0;
+  result = 1;
   currentSymbol = symbolNeutral;
 };
 
@@ -41,7 +42,6 @@ btnSymbols.forEach((symbol) => {
         currentSymbol = symbolDivide;
         break;
     }
-    lastSymbol = currentSymbol;
   });
 });
 
@@ -63,7 +63,7 @@ const handleCalculation = (symbol) => {
   }
 };
 
-// Handles the entry of numerical buttons and ensures continued calculations
+// Handles the entry of numerical buttons & ensures continued calculations
 const btnNumbers = document.querySelectorAll(".calc__btn--num");
 btnNumbers.forEach((number) => {
   number.addEventListener("click", (event) => {
@@ -78,18 +78,18 @@ btnNumbers.forEach((number) => {
       displayValue = parseFloat(calcDisplay.innerText);
       handleCalculation(currentSymbol);
     }
+    lastSymbol = currentSymbol;
     currentSymbol = symbolNeutral;
-    console.log(totalValue);
   });
 });
 
-// Handles the equals symbol and provides updated results
+// Displays the result on the screen & controls the behaviour of equals button
 const handleResult = () => {
+  if (result === totalValue) {
+    handleCalculation(lastSymbol);
+  }
   calcDisplay.innerText = totalValue;
-  handleCalculation(lastSymbol);
-  console.log(lastSymbol);
-  console.log(displayValue);
-  console.log(currentSymbol);
+  result = totalValue;
 };
 
 // Sources the numarical value of number buttons

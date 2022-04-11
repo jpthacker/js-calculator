@@ -65,6 +65,7 @@ body {
 }
 .calc__screen-display {
   min-width: 92%;
+  max-width: 92%;
   min-height: 82%;
   max-height: 82%;
   background: #cbc4a7;
@@ -209,10 +210,6 @@ body {
 .calc__btn--num {
   background-color: #fafafa;
 }
-.calc__btn--wide {
-  background: #fafafa;
-  max-width: 140px;
-}
 .calc__btn--symbol {
   background: #ffab7b;
   color: #fafafa;
@@ -224,6 +221,11 @@ body {
 .calc__btn--cancel {
   background: #575757;
   color: #fafafa;
+}
+
+#zero {
+  background: #fafafa;
+  max-width: 140px;
 }
 
 .clicked {

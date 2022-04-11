@@ -19,11 +19,6 @@
     background-color: $color-white;
   }
 
-  &--wide {
-    background: $color-white;
-    max-width: 140px;
-  }
-
   &--symbol {
     background: $color-orange;
     color: $color-white;
@@ -38,6 +33,11 @@
     background: $color-gray-dark;
     color: $color-white;
   }
+}
+
+#zero {
+  background: $color-white;
+  max-width: 140px;
 }
 
 .clicked {
