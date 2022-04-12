@@ -26,6 +26,11 @@
   font-size: 22px;
 }
 
+.long {
+  font-size: 30px;
+  line-height: 100px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -71,6 +76,9 @@ body {
   background: #cbc4a7;
   border-radius: 20px;
   padding: 0 15px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: block;
 }
 .calc__solar-border {
   width: 100%;

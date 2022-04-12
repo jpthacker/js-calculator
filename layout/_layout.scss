@@ -54,6 +54,9 @@ body {
     background: $color-screen;
     border-radius: 20px;
     padding: 0 15px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
   }
 
   &__solar-border {

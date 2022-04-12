@@ -2,7 +2,7 @@
 let displayValue = 0;
 let totalValue = "t";
 const calcDisplay = document.querySelector("#display");
-let numberStatus;
+let numberStatus = "replace";
 let symbolNeutral = "n";
 let currentSymbol = symbolNeutral;
 let symbolPlus = "p";
@@ -11,31 +11,28 @@ let symbolMultiply = "x";
 let symbolDivide = "d";
 let result = "r";
 
-// Cancels the calculation and resets the display to zero
-const handleCancel = () => {
-  calcDisplay.innerText = "0";
-  displayValue = 0;
-  totalValue = "t";
-  currentSymbol = symbolNeutral;
-  result = "r";
+const handleDisplayOverflow = () => {
+  if (calcDisplay.innerText.length > 7) {
+    calcDisplay.classList.add("long");
+  } else {
+    calcDisplay.classList.remove("long");
+  }
 };
 
-// Handles number entry
+// Handles number entry via click
 const handleNumberEntry = (event) => {
-  if (
-    numberStatus === "add" &&
-    displayValue != 0 &&
-    calcDisplay.innerText != totalValue
-  ) {
+  console.log(numberStatus);
+  if (numberStatus === "add" && calcDisplay.innerText != totalValue) {
     calcDisplay.innerText = calcDisplay.innerText + event.target.innerText;
   } else {
     calcDisplay.innerText = event.target.innerText;
   }
   displayValue = parseFloat(calcDisplay.innerText);
   numberStatus = "add";
+  handleDisplayOverflow();
 };
 
-// Handles symbol entry
+// Handles symbol entry via click
 const handleSymbolEntry = (event) => {
   switch (event.target.id) {
     case "plus":
@@ -51,6 +48,7 @@ const handleSymbolEntry = (event) => {
       currentSymbol = symbolDivide;
       break;
   }
+  handleDisplayOverflow();
 };
 
 // Runs the calculation depending on the symbol pressed
@@ -74,9 +72,10 @@ const handleCalculation = (symbol) => {
       totalValue = totalValue / displayValue;
       break;
   }
+  calcDisplay.innerText = totalValue;
 };
 
-// Handles the entry of numerical buttons via click events
+// Handles the entry of numerical buttons
 const btnNumbers = document.querySelectorAll(".calc__btn--num");
 btnNumbers.forEach((number) => {
   number.addEventListener("click", (event) => {
@@ -84,7 +83,7 @@ btnNumbers.forEach((number) => {
   });
 });
 
-// Handles the entry of symbols via clicks
+// Handles the entry of symbols and performs the current calculation
 const btnSymbols = document.querySelectorAll(".calc__btn--symbol");
 btnSymbols.forEach((symbol) => {
   symbol.addEventListener("click", (event) => {
@@ -95,18 +94,31 @@ btnSymbols.forEach((symbol) => {
   });
 });
 
-// Displays the result on the screen & controls the behaviour of equals button
+// Displays the result on the screen & handles the equals button
 const handleResult = () => {
   handleCalculation(currentSymbol);
   calcDisplay.innerText = totalValue;
   result = totalValue;
   numberStatus = "replace";
+  handleDisplayOverflow();
+};
+
+// Cancels the calculation and resets the display to zero
+const handleCancel = () => {
+  calcDisplay.innerText = "0";
+  displayValue = 0;
+  totalValue = "t";
+  currentSymbol = symbolNeutral;
+  result = "r";
+  numberStatus = "replace";
+  calcDisplay.classList.remove("long");
 };
 
 // Sources the numarical value of number buttons
 // let currentInteger;
-// switch (event.target.id) {
-//   case "zero":
+
+// switch (key) {
+//   case "0":
 //     currentInteger = 0;
 //     break;
 //   case "one":
