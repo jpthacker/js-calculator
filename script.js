@@ -11,6 +11,7 @@ let symbolMultiply = "x";
 let symbolDivide = "d";
 let result = "r";
 
+//Handles long entires and results
 const handleDisplayOverflow = () => {
   if (calcDisplay.innerText.length > 7) {
     calcDisplay.classList.add("long");
