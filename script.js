@@ -1,7 +1,7 @@
 // Variables which determine the properties of the display and the current calculation
+const calcDisplay = document.querySelector("#display");
 let displayValue = 0;
 let totalValue = "t";
-const calcDisplay = document.querySelector("#display");
 let numberStatus = "replace";
 let symbolNeutral = "n";
 let currentSymbol = symbolNeutral;
@@ -20,13 +20,26 @@ const handleDisplayOverflow = () => {
   }
 };
 
-// Handles number entry via click
-const handleNumberEntry = (event) => {
+// Handles number entry
+const handleNumberEntry = (btn) => {
   console.log(numberStatus);
   if (numberStatus === "add" && calcDisplay.innerText != totalValue) {
-    calcDisplay.innerText = calcDisplay.innerText + event.target.innerText;
+    calcDisplay.innerText = calcDisplay.innerText + btn.innerText;
   } else {
-    calcDisplay.innerText = event.target.innerText;
+    calcDisplay.innerText = btn.innerText;
+  }
+  displayValue = parseFloat(calcDisplay.innerText);
+  numberStatus = "add";
+  handleDisplayOverflow();
+};
+77;
+
+const handleNumberEntryKeyPress = (number) => {
+  console.log(numberStatus);
+  if (numberStatus === "add" && calcDisplay.innerText != totalValue) {
+    calcDisplay.innerText = calcDisplay.innerText + number.innerText;
+  } else {
+    calcDisplay.innerText = number.innerText;
   }
   displayValue = parseFloat(calcDisplay.innerText);
   numberStatus = "add";
@@ -34,18 +47,18 @@ const handleNumberEntry = (event) => {
 };
 
 // Handles symbol entry via click
-const handleSymbolEntry = (event) => {
-  switch (event.target.id) {
-    case "plus":
+const handleSymbolEntry = (btn) => {
+  switch (btn.id) {
+    case "+":
       currentSymbol = symbolPlus;
       break;
-    case "minus":
+    case "-":
       currentSymbol = symbolMinus;
       break;
-    case "multiply":
+    case "*":
       currentSymbol = symbolMultiply;
       break;
-    case "divide":
+    case "/":
       currentSymbol = symbolDivide;
       break;
   }
@@ -76,22 +89,35 @@ const handleCalculation = (symbol) => {
   calcDisplay.innerText = totalValue;
 };
 
-// Handles the entry of numerical buttons
+// Handles numerical buttons via click or keypress
 const btnNumbers = document.querySelectorAll(".calc__btn--num");
 btnNumbers.forEach((number) => {
-  number.addEventListener("click", (event) => {
-    handleNumberEntry(event);
+  number.addEventListener("click", () => {
+    handleNumberEntry(number);
+  });
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key === number.innerHTML) {
+      handleNumberEntry(number);
+    }
   });
 });
 
 // Handles the entry of symbols and performs the current calculation
 const btnSymbols = document.querySelectorAll(".calc__btn--symbol");
 btnSymbols.forEach((symbol) => {
-  symbol.addEventListener("click", (event) => {
+  symbol.addEventListener("click", () => {
     if (result != totalValue) {
       handleCalculation(currentSymbol);
     }
-    handleSymbolEntry(event);
+    handleSymbolEntry(symbol);
+  });
+  document.body.addEventListener("keydown", (event) => {
+    if (event.key === symbol.id) {
+      if (result != totalValue) {
+        handleCalculation(currentSymbol);
+      }
+      handleSymbolEntry(symbol);
+    }
   });
 });
 
@@ -104,6 +130,16 @@ const handleResult = () => {
   handleDisplayOverflow();
 };
 
+// Event listerner for equals button on click and keypress
+const equalsBtn = document.querySelector(".calc__btn--equals");
+equalsBtn.addEventListener("click", handleResult);
+document.body.addEventListener("keydown", (event) => {
+  event.preventDefault();
+  if (event.key === "Enter") {
+    handleResult();
+  }
+});
+
 // Cancels the calculation and resets the display to zero
 const handleCancel = () => {
   calcDisplay.innerText = "0";
@@ -114,39 +150,12 @@ const handleCancel = () => {
   numberStatus = "replace";
   calcDisplay.classList.remove("long");
 };
-
-// Sources the numarical value of number buttons
-// let currentInteger;
-
-// switch (key) {
-//   case "0":
-//     currentInteger = 0;
-//     break;
-//   case "one":
-//     currentInteger = 1;
-//     break;
-//   case "two":
-//     currentInteger = 2;
-//     break;
-//   case "three":
-//     currentInteger = 3;
-//     break;
-//   case "four":
-//     currentInteger = 4;
-//     break;
-//   case "five":
-//     currentInteger = 5;
-//     break;
-//   case "six":
-//     currentInteger = 6;
-//     break;
-//   case "seven":
-//     currentInteger = 7;
-//     break;
-//   case "8":
-//     currentInteger = 8;
-//     break;
-//   case "9":
-//     currentInteger = 9;
-//     break;
-// }
+// Event listerner for equals button on click and keypress
+const cancelBtn = document.querySelector(".calc__btn--cancel");
+cancelBtn.addEventListener("click", handleCancel);
+document.body.addEventListener("keydown", (event) => {
+  event.preventDefault();
+  if (event.key === "c") {
+    handleCancel();
+  }
+});
