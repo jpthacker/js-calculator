@@ -8,6 +8,33 @@
 
 body {
   background-color: $color-brown-dark;
+  overflow: hidden;
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
+.pencils {
+  position: fixed;
+  display: none;
+  top: 5vh;
+  right: 0;
+
+  &__img {
+    object-fit: cover;
+    max-height: 300px;
+    max-width: 660px;
+  }
+}
+
+.paper {
+  position: fixed;
+  display: none;
+  top: 85vh;
+  left: -5vw;
+  transform: rotate(15deg);
+  min-height: 700px;
+  min-width: 700px;
+  background-color: #fff7df;
 }
 
 .calc {
@@ -91,7 +118,7 @@ body {
   }
 }
 
-@media screen and (min-width: 350px) {
+@media screen and (min-width: 420px) {
   .calc {
     width: 340px;
     height: 556px;
@@ -99,5 +126,78 @@ body {
     &__grid {
       padding: 40px 30px;
     }
+  }
+  .pencils {
+    display: block;
+    top: 0;
+    right: -15vw;
+
+    &__img {
+      max-height: 300px;
+      max-width: 660px;
+    }
+  }
+
+  .paper {
+    display: block;
+    top: 95vh;
+    left: -5vw;
+    min-height: 700px;
+    min-width: 700px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .pencils {
+    top: 5vh;
+    right: -15vw;
+  }
+
+  .paper {
+    display: block;
+    top: 92vh;
+    left: -5vw;
+  }
+}
+
+@media screen and (max-height: 900px) {
+  .pencils {
+    display: none;
+  }
+
+  .paper {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .pencils {
+    top: 5vh;
+    right: -10vw;
+
+    &__img {
+      max-height: 300px;
+      max-width: 660px;
+    }
+  }
+
+  .paper {
+    top: 90vh;
+    left: -10vw;
+    min-height: 700px;
+    min-width: 700px;
+    transform: rotate(20deg);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .pencils {
+    top: 5vh;
+    right: 0;
+  }
+
+  .paper {
+    top: 85vh;
+    left: -5vw;
   }
 }

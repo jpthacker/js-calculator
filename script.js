@@ -32,7 +32,6 @@ const handleNumberEntry = (btn) => {
   numberStatus = "add";
   handleDisplayOverflow();
 };
-77;
 
 const handleNumberEntryKeyPress = (number) => {
   console.log(numberStatus);
