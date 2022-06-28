@@ -141,7 +141,7 @@ body {
   .pencils {
     display: block;
     top: 0;
-    right: -15vw;
+    right: -30vw;
   }
   .pencils__img {
     max-height: 300px;
@@ -168,23 +168,16 @@ body {
     left: -5vw;
   }
 }
-@media screen and (max-height: 900px) {
-  .pencils {
-    display: none;
-  }
-
-  .paper {
-    display: none;
-  }
-}
 @media screen and (min-width: 992px) {
   .pencils {
     top: 5vh;
     right: -10vw;
+    display: block;
   }
   .pencils__img {
     max-height: 300px;
     max-width: 660px;
+    display: block;
   }
 
   .paper {
@@ -204,6 +197,16 @@ body {
   .paper {
     top: 85vh;
     left: -5vw;
+  }
+}
+@media screen and (max-height: 799px) {
+  .pencils {
+    display: none;
+  }
+}
+@media screen and (max-height: 760px) {
+  .paper {
+    display: none;
   }
 }
 .calc__grid {
