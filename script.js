@@ -149,7 +149,8 @@ const handleCancel = () => {
   numberStatus = "replace";
   calcDisplay.classList.remove("long");
 };
-// Event listerner for equals button on click and keypress
+
+// Event listerner for cancel button on click and keypress
 const cancelBtn = document.querySelector(".calc__btn--cancel");
 cancelBtn.addEventListener("click", handleCancel);
 document.body.addEventListener("keydown", (event) => {
