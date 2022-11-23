@@ -1,4 +1,6 @@
-# js-calculator
+# JS Calculator
+
+> \_A simple retro-style calculator app made using HTML, SCSS and vanilla JavaScript. The calculator accepts mouse and keyboard commands and outputs the result on the screen.
 
 Nology coursework: make a calculator challenge
 

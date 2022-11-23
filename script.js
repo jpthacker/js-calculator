@@ -1,9 +1,9 @@
 // Variables which determine the properties of the display and the current calculation
 const calcDisplay = document.querySelector("#display");
 let displayValue = 0;
-let totalValue = "t";
+let totalValue = "";
 let numberStatus = "replace";
-let symbolNeutral = "n";
+let symbolNeutral = "";
 let currentSymbol = symbolNeutral;
 let symbolPlus = "p";
 let symbolMinus = "m";
@@ -11,7 +11,7 @@ let symbolMultiply = "x";
 let symbolDivide = "d";
 let result = "r";
 
-//Handles long entires and results
+//  Handles long entires and results
 const handleDisplayOverflow = () => {
   if (calcDisplay.innerText.length > 7) {
     calcDisplay.classList.add("long");
@@ -67,8 +67,8 @@ const handleSymbolEntry = (btn) => {
 // Runs the calculation depending on the symbol pressed
 const handleCalculation = (symbol) => {
   numberStatus = "replace";
-  result = "r";
-  if (totalValue === "t") {
+  result = "";
+  if (totalValue === "") {
     totalValue = displayValue;
   }
   switch (symbol) {
@@ -143,7 +143,7 @@ document.body.addEventListener("keydown", (event) => {
 const handleCancel = () => {
   calcDisplay.innerText = "0";
   displayValue = 0;
-  totalValue = "t";
+  totalValue = "";
   currentSymbol = symbolNeutral;
   result = "r";
   numberStatus = "replace";
